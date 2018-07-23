@@ -7,6 +7,10 @@ export const getStyles = (size) => ({
     borderTopLeftRadius: size / 2,
     borderTopRightRadius: size / 2,
     overflow: 'hidden',
+    shadowOffset: {width:10, height: 10},
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 1,
   },
   innerCircle: {
     overflow: 'hidden',

@@ -36,6 +36,7 @@
     "react-native": "^0.54.2"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-native-linear-gradient": "^2.4.0"
   }
 }
