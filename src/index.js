@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { getStyles } from './rules';
+import LinearGradient from 'react-native-linear-gradient'
 
 const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internalColor, style, showText, text, textStyle, showLabels, labelStyle, showPercent, percentStyle }) => {
   const styles = getStyles(size);
@@ -12,6 +13,13 @@ const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internal
     backgroundColor: internalColor,
     transform: [{ translateX: size / 4 }, { rotate: `${degrees}deg` }, { translateX: (size / 4 * -1) }],
   };
+
+  const gradientStyle = {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  }
 
   const percentElement = (showPercent) ? (
     <Text style={[{ backgroundColor: innerColor }, percentStyle]} numberOfLines={1}>{percentValue}%</Text>
@@ -31,7 +39,13 @@ const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internal
   return (
     <View style={style}>
       <View style={[styles.outerCircle, { backgroundColor: outerColor }]}>
-        <View style={[styles.halfCircle, degressStyle]}/>
+      <LinearGradient
+            colors={['#39c7ed', '#130924']} 
+            start={{ x: 0.1, y: 0.5 }}
+            end={{ x: 1, y: 0.5 }} 
+            style={[styles.halfCircle, degressStyle, gradientStyle]}>
+        <View  />
+        </LinearGradient>
         <View style={[styles.innerCircle, { backgroundColor: innerColor }]}>
           {percentElement}
           {textElement}
@@ -66,14 +80,14 @@ Speedometer.defaultProps = {
   size: 200,
   outerColor: '#e6e6e6',
   innerColor: '#ffffff',
-  internalColor: '#2eb82e',
+  internalColor: '#130924',
   style: {},
-  showText: false,
+  showText: true,
   text: '',
   textStyle: {},
-  showLabels: false,
+  showLabels: true,
   labelStyle: {},
-  showPercent: false,
+  showPercent: true,
   percentStyle: {},
 };
 
