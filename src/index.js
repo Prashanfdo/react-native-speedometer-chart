@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text,StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { getStyles } from './rules';
-import LinearGradient from 'react-native-linear-gradient'
+// import LinearGradient from 'react-native-linear-gradient'
+import { LinearGradient } from 'expo';
 
 const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internalColor, style, showText, text, textStyle, showLabels, labelStyle, showPercent, percentStyle }) => {
   const styles = getStyles(size);
