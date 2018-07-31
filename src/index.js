@@ -5,7 +5,7 @@ import { getStyles } from './rules';
 // import LinearGradient from 'react-native-linear-gradient'
 import { LinearGradient } from 'expo';
 
-const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internalColor, style, showText, text, textStyle, showLabels, labelStyle, showPercent, percentStyle }) => {
+const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internalColor, style, showText, text, textStyle, showLabels, labelStyle, showPercent, percentStyle, colorArry }) => {
   const styles = getStyles(size);
   const degreesValue = (value > totalValue) ? totalValue : value;
   const percentValue = parseInt(String((value * 100) / totalValue).split('.')[0]);
@@ -41,7 +41,7 @@ const Speedometer = ({ value, totalValue, size, outerColor, innerColor, internal
     <View style={style}>
       <View style={[styles.outerCircle, { backgroundColor: outerColor }]}>
       <LinearGradient
-            colors={['#39c7ed', '#130924']} 
+            colors={colorArry} 
             start={{ x: 0.1, y: 0.5 }}
             end={{ x: 1, y: 0.5 }} 
             style={[styles.halfCircle, degressStyle, gradientStyle]}>
@@ -75,6 +75,7 @@ Speedometer.propTypes = {
   labelStyle: PropTypes.object,
   showPercent: PropTypes.bool,
   percentStyle: PropTypes.object,
+  colorArry: PropTypes.array,
 };
 
 Speedometer.defaultProps = {
@@ -90,6 +91,7 @@ Speedometer.defaultProps = {
   labelStyle: {},
   showPercent: true,
   percentStyle: {},
+  colorArry: ['#39c7ed', '#130924']
 };
 
 export default Speedometer;
