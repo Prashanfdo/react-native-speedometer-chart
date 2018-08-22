@@ -1,4 +1,4 @@
-export const getStyles = (size) => ({
+export const getStyles = size => ({
   outerCircle: {
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -7,12 +7,12 @@ export const getStyles = (size) => ({
     borderTopLeftRadius: size / 2,
     borderTopRightRadius: size / 2,
     overflow: 'hidden',
-    borderWidth: 2,
+    borderWidth: 0,
     borderColor: 'black',
     borderBottomWidth: 0,
     shadowColor: 'black',
     shadowOffset: { width: 3, height: 2 },
-    shadowOpacity: 0.8,
+    shadowOpacity: 0,
     shadowRadius: 2,
     elevation: 1,
     marginLeft: 5,
@@ -30,7 +30,7 @@ export const getStyles = (size) => ({
     borderTopRightRadius: size / 2,
     paddingLeft: 3,
     paddingRight: 3,
-    borderWidth: 2,
+    borderWidth: 0,
 
     borderColor: 'black',
     borderBottomWidth: 0,
